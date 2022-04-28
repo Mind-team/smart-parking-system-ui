@@ -1,7 +1,7 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
+import postcss from "rollup-plugin-postcss";
 
 // eslint-disable-next-line no-undef
 const packageJson = require("./package.json");
@@ -24,15 +24,16 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
+      postcss(),
       typescript({
         tsconfig: "./tsconfig.json",
         exclude: ["**/stories", "**/.storybook"],
       }),
     ],
   },
-  {
-    input: "dist/esm/types/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
-    plugins: [dts()],
-  },
+  // {
+  //   input: "dist/esm/types/index.d.ts",
+  //   output: [{ file: "dist/index.d.ts", format: "esm" }],
+  //   plugins: [dts(), postcss()],
+  // },
 ];
