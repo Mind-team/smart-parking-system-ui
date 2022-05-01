@@ -1,0 +1,209 @@
+.Button_styles_wrapper__akbO\+ {
+    outline: none;
+    border: 0;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 13px;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.Button_styles_wrapper__akbO\+:hover {
+    transition: 400ms;
+}
+
+.Button_styles_primary__HBX4R {
+    background: var(--si-accent);
+}
+
+.Button_styles_primary__HBX4R:hover {
+    box-shadow: 0 0 15px var(--si-accent);
+}
+
+.Button_styles_secondary__pwVxt {
+    background: var(--si-btn-secondary-bg);
+    border: 1px solid var(--si-btn-secondary-color);
+}
+
+.Button_styles_m__sZc7\+ {
+    height: 53px;
+    font-size: 24px;
+    line-height: 28px;
+    border-radius: 16px;
+}
+
+.Button_styles_s__M0Exc {
+    height: 33px;
+    font-size: 20px;
+    line-height: 20px;
+    border-radius: 12px;
+    min-width: 65px;
+}
+
+.Button_styles_l__aYBZv {
+    height: 73px;
+    font-size: 29px;
+    line-height: 28px;
+    border-radius: 16px;
+}
+
+.Button_styles_textWrapper__zQJVY {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    padding: 13px 23px;
+}
+
+.Button_styles_textSizeS__phySn {
+    padding: 13px 12px;
+}
+
+.Button_styles_textTypePrimary__ayzCj {
+    color: var(--si-text);
+}
+
+.Button_styles_textTypeSecondary__ICgsr {
+    color: var(--si-btn-secondary-color);
+}
+
+.InputField_styles_wrapper__9KCsb {
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid var(--si-infi-border-color);
+    color: var(--si-text-dark);
+    background-color: var(--si-text);
+    transition: 400ms;
+    border-radius: 16px;
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 50px;
+    line-height: 41px;
+    padding-left: 25px;
+    height: 53px;
+}
+
+.InputField_styles_wrapper__9KCsb:focus {
+    transition: 400ms;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.InputField_styles_wrapperS__7\+TYY {
+    width: 250px;
+}
+
+.InputField_styles_wrapperM__eo86t {
+    width: 417px;
+}
+
+.InputField_styles_wrapperL__4kzTn {
+    width: 550px;
+}
+
+.InputField_styles_valid__gBAbS {
+    border-color: var(--si-valid-color);
+}
+
+.InputField_styles_invalid__\+4q-u {
+    border-color: var(--si-invalid-color);
+}
+
+.InputField_styles_control__VF1Fv {
+    display: flex;
+    flex-direction: column;
+}
+
+.InputField_styles_invalidMessage__sSIYe {
+    min-height: 20px;
+    margin-bottom: 7px;
+    color: var(--si-invalid-color);
+}
+
+.InfoWidget_styles_miniControl__-6wQU {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 434px;
+    height: 136px;
+    /*background-color: ${(props) => props.theme.widgetBackground};*/
+    border-radius: 29px;
+    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.08);
+}
+
+.InfoWidget_styles_miniControlLeftSide__7ppfV {
+    font-size: 21px;
+    /*color: ${(props) => props.theme.plainText};*/
+    font-weight: 400;
+}
+
+.InfoWidget_styles_miniControlRightSide__J-UGw {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 116px;
+    height: 59px;
+    border-radius: 9px;
+    background-image: linear-gradient(243deg, #886dec 100%, #56439e 0%);
+}
+
+.InfoWidget_styles_miniControlRightSideText__\+YJw6 {
+    font-size: 21px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.InfoWidget_styles_roundControl__6HAy5 {
+    cursor: pointer;
+    width: 220px;
+    height: 220px;
+    border-radius: 29px;
+    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.InfoWidget_styles_roundControlText__jRfZY {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    height: 24px;
+}
+
+.Navbar_styles_wrapper__9M0WB {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 7.2916666667%;
+    min-height: 56px;
+    max-height: 70px;
+    background: var(--si-navbar-bg);
+}
+
+.Navbar_styles_elementsWrapper__XKftW {
+    margin: 0;
+    padding: 17px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.Navbar_styles_elementWrapper__HXI1b {
+    font-size: 18px;
+    display: inline;
+    padding: 0 33px;
+}
+
+.Navbar_styles_elementTitle__UMN6- {
+    cursor: pointer;
+    color: var(--si-navbar-text);
+    transition: 0.5s;
+}
+
+.Navbar_styles_elementTitle__UMN6-:hover {
+    opacity: 50%;
+}
+
+
+/*# sourceMappingURL=main.a1da6cda.css.map*/
