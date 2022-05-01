@@ -1,7 +1,6 @@
 {
   "name": "smart-parking-system-driver-web",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://mind-team.github.io/smart-parking-system-ui",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
