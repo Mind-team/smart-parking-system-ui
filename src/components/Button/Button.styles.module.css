@@ -1,4 +1,4 @@
-.btn-wrapper {
+.wrapper {
     outline: none;
     border: 0;
     font-style: normal;
@@ -6,12 +6,11 @@
     margin-top: 13px;
     display: flex;
     align-self: center;
-    color: var(--si-text);
     cursor: pointer;
     justify-content: center;
 }
 
-.btn-wrapper:hover {
+.wrapper:hover {
     transition: 400ms;
 }
 
@@ -50,17 +49,21 @@
     border-radius: 16px;
 }
 
-.btn-text {
+.textWrapper {
     display: flex;
     align-self: center;
     justify-self: center;
     padding: 13px 23px;
 }
 
-.text-s {
+.textSizeS {
     padding: 13px 12px;
 }
 
-.text-secondary {
+.textTypePrimary {
+    color: var(--si-text);
+}
+
+.textTypeSecondary {
     color: var(--si-btn-secondary-color);
 }
