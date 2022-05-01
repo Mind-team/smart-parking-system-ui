@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  GradientBackground,
-  InfoWidget,
-} from "../components/InfoWidget/InfoWidget";
+import { GradientBackground, InfoWidget } from "../components";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
