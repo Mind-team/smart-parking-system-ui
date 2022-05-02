@@ -27,6 +27,7 @@
     "build-storybook": "build-storybook -s public",
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
+    "pre-rollup": "rm -rf dist",
     "rollup": "rollup -c"
   },
   "main": "dist/cjs/index.js",
