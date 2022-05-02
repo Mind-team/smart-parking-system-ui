@@ -2,6 +2,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
+import dts from "rollup-plugin-dts";
 
 // eslint-disable-next-line no-undef
 const packageJson = require("./package.json");
@@ -31,9 +32,9 @@ export default [
       }),
     ],
   },
-  // {
-  //   input: "dist/esm/types/index.d.ts",
-  //   output: [{ file: "dist/index.d.ts", format: "esm" }],
-  //   plugins: [dts(), postcss()],
-  // },
+  {
+    input: "dist/esm/types/index.d.ts",
+    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    plugins: [dts(), postcss()],
+  },
 ];
