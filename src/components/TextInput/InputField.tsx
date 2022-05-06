@@ -18,12 +18,15 @@ export interface IInputFiledProps extends IOptionalSizeable {
   readonly placeholder?: string;
   readonly valueChanges?: (currentInput: string) => void;
   readonly validators?: Validator[];
+  readonly isDisabled?: boolean;
   readonly state?: ({
     isValid,
     isTouched,
+    isDisabled,
   }: {
     isValid: boolean;
     isTouched: boolean;
+    isDisabled: boolean;
   }) => void;
 }
 
@@ -61,8 +64,9 @@ export const InputField: FC<IInputFiledProps> = ({
   type,
   size = "m",
   placeholder,
-  valueChanges = (value: string) => console.log(value),
+  valueChanges = () => {},
   validators = [],
+  isDisabled = false,
   state,
 }) => {
   const nativeInputType = parseTypeToNative(type);
@@ -88,7 +92,7 @@ export const InputField: FC<IInputFiledProps> = ({
     setValid(validationsResult);
     setTouched(true);
     if (state) {
-      state({ isValid: validationsResult, isTouched: true });
+      state({ isValid: validationsResult, isTouched: true, isDisabled });
     }
   }, [inputAfterDebounce]);
 
@@ -158,6 +162,7 @@ export const InputField: FC<IInputFiledProps> = ({
         value={currentInput}
         onChange={handleChange}
         placeholder={placeholder}
+        disabled={isDisabled}
       />
     </div>
   );

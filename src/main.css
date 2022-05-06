@@ -5,6 +5,7 @@
     --si-btn-secondary-bg: #ffffff;
     --si-btn-secondary-color: #444444;
     --si-infi-border-color: var(--si-accent);
+    --si-infi-disabled: #f3f3f3;
     --si-valid-color: #66FF66;
     --si-invalid-color: #FF0000;
     --si-navbar-bg: var(--si-text);
