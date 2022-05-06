@@ -71,6 +71,7 @@ export const InputField: FC<IInputFiledProps> = ({
   const [invalidMessage, setInvalidMessage] = useState("");
   const [isTouched, setTouched] = useState(false);
   const inputAfterDebounce = useDebounce(currentInput, 600);
+  const [regexp, setRegexp] = useState<RegExp[]>([]);
 
   useEffect(() => {
     if (inputAfterDebounce === "" && !isTouched) {
@@ -90,6 +91,12 @@ export const InputField: FC<IInputFiledProps> = ({
       state({ isValid: validationsResult, isTouched: true });
     }
   }, [inputAfterDebounce]);
+
+  useEffect(() => {
+    if (type === "numbers") {
+      setRegexp((prev) => [...prev, /^\d+$/]);
+    }
+  }, []);
 
   const styles = {
     wrapper: {
@@ -113,8 +120,17 @@ export const InputField: FC<IInputFiledProps> = ({
   };
 
   const handleChange = (event: any) => {
-    setCurrentInput(event.target.value);
-    valueChanges(event.target.value);
+    const newValue = event.target.value;
+    let isValid = true;
+    regexp.forEach((rx) => {
+      if (!rx.test(newValue)) {
+        isValid = false;
+      }
+    });
+    if (isValid || newValue === "") {
+      setCurrentInput(event.target.value);
+      valueChanges(event.target.value);
+    }
   };
 
   const generateInvalidMessage = () => {
