@@ -19,6 +19,7 @@ export interface IInputFiledProps extends IOptionalSizeable {
   readonly valueChanges?: (currentInput: string) => void;
   readonly validators?: Validator[];
   readonly isDisabled?: boolean;
+  readonly debounceDelay?: number;
   readonly state?: ({
     isValid,
     isTouched,
@@ -67,6 +68,7 @@ export const InputField: FC<IInputFiledProps> = ({
   valueChanges = () => {},
   validators = [],
   isDisabled = false,
+  debounceDelay = 600,
   state,
 }) => {
   const nativeInputType = parseTypeToNative(type);
@@ -74,7 +76,7 @@ export const InputField: FC<IInputFiledProps> = ({
   const [isValid, setValid] = useState(false);
   const [invalidMessage, setInvalidMessage] = useState("");
   const [isTouched, setTouched] = useState(false);
-  const inputAfterDebounce = useDebounce(currentInput, 600);
+  const inputAfterDebounce = useDebounce(currentInput, debounceDelay);
   const [regexp, setRegexp] = useState<RegExp[]>([]);
 
   useEffect(() => {
@@ -149,11 +151,6 @@ export const InputField: FC<IInputFiledProps> = ({
       <span className={`${classes.invalidMessage}`}>
         {generateInvalidMessage()}
       </span>
-      {/* {isTouched && !isValid && ( */}
-      {/*   <span className={`${classes.invalidMessage}`}> */}
-      {/*     {invalidMessage === "" ? "Неправильный формат" : invalidMessage} */}
-      {/*   </span> */}
-      {/* )} */}
       <input
         className={`${styles.wrapper.main} ${styles.wrapper.size} ${
           isTouched && isValid ? styles.wrapper.valid : ""
