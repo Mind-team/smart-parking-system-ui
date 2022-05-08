@@ -85,6 +85,11 @@
     height: 53px;
 }
 
+.InputField_styles_wrapper__9KCsb:disabled {
+    background-color: var(--si-infi-disabled);
+    border-color: var(--si-infi-disabled);
+}
+
 .InputField_styles_wrapper__9KCsb:focus {
     transition: 400ms;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -206,5 +211,81 @@
     height: 24px;
 }
 
+.ParkingWidgetMini_styles_wrapper__ICwsn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 434px;
+    height: 302px;
+    background-color: var(--si-text);
+    border-radius: 29px;
+    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.08);
+    justify-content: space-between;
+}
 
-/*# sourceMappingURL=main.0801a120.css.map*/
+.ParkingWidgetMini_styles_titleWrapper__bMexN {
+    margin-top: 20px;
+    width: 317px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+    color: var(--si-text-dark);
+}
+
+.ParkingWidgetMini_styles_titleWrapperUnfilled__XhA\+J {
+    margin-top: 20px;
+    width: 317px;
+    display: flex;
+    justify-content: center;
+    font-size: 21px;
+    color: var(--si-text-dark);
+}
+
+.ParkingWidgetMini_styles_sum__qRjDW {
+    font-size: 56px;
+    color: var(--si-text-dark);
+    font-weight: 400;
+}
+
+.ParkingWidgetMini_styles_details__5WZFy {
+    font-size: 21px;
+    color: var(--si-accent);
+    font-weight: 400;
+    margin-bottom: 47px;
+    cursor: pointer;
+}
+
+.ParkingWidgetLong_styles_wrapper__OcZLV {
+    display: flex;
+    justify-content: space-between;
+    height: 114px;
+    width: 928px;
+    background-color: var(--si-text);
+    border-radius: 29px;
+    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.08);
+    font-size: 36px;
+    color: var(--si-text-dark);
+    font-weight: 400;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.ParkingWidgetLong_styles_wrapper__OcZLV:hover {
+    background-color: var(--si-accent);
+}
+
+.ParkingWidgetLong_styles_wrapper__OcZLV:hover:nth-child(n) {
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.ParkingWidgetLong_styles_title__sE2GK {
+    margin-left: 40px;
+}
+
+.ParkingWidgetLong_styles_date__5HZk4 {
+    margin-right: 40px;
+}
+
+
+/*# sourceMappingURL=main.2c217aa9.css.map*/
