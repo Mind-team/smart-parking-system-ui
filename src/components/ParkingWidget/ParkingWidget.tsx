@@ -3,51 +3,39 @@ import miniWidgetStyles from "./ParkingWidgetMini.styles.module.css";
 import longWidgetStyles from "./ParkingWidgetLong.styles.module.css";
 import { useFormatter } from "../../hooks";
 
-export interface IParkingWidgetData {
-  parkingName: string;
-  date: string | Date;
-  price: number;
+interface IBaseParkingWidgetProps {
+  price: string | number;
   detailsClick: () => void;
 }
 
-export interface IMiniCompletedParkingWidgetProps {
-  size: "mini";
-  data: IParkingWidgetData;
-}
-
-export interface IMiniUncompletedParkingWidgetProps {
-  size: "mini";
-  data: Pick<IParkingWidgetData, "price" | "detailsClick">;
-}
-
-export interface ILongParkingWidgetProps {
+interface ILongParkingWidgetProps extends IBaseParkingWidgetProps {
   size: "long";
-  data: Pick<
-    IParkingWidgetData,
-    "parkingName" | "date" | "price" | "detailsClick"
-  >;
+  date: string | number | Date;
+  parkingName: string;
+}
+
+interface IMiniUncompletedWidgetProps extends IBaseParkingWidgetProps {
+  size: "mini";
+}
+
+interface IMiniCompletedWidgetProps extends IBaseParkingWidgetProps {
+  size: "mini";
+  parkingName: string;
+  date: string | number | Date;
 }
 
 export type IParkingWidgetProps =
-  | IMiniCompletedParkingWidgetProps
-  | IMiniUncompletedParkingWidgetProps
-  | ILongParkingWidgetProps;
+  | ILongParkingWidgetProps
+  | IMiniCompletedWidgetProps
+  | IMiniUncompletedWidgetProps;
 
-export const ParkingWidget: FC<IParkingWidgetProps> = ({ size, data }) => {
+export const ParkingWidget: FC<IParkingWidgetProps> = (data) => {
   const formatter = useFormatter();
   const [isHover, setHover] = useState(false);
-  const formattedDate = formatter(
-    "date",
-    // TODO: remove as string
-    ("date" in data ? data.date : null) as string,
-  );
-  const formattedTime = formatter(
-    "time",
-    // TODO: remove as string
-    ("date" in data ? data.date : null) as string,
-  );
+  const formattedDate = "date" in data ? formatter("date", data.date) : null;
+  const formattedTime = "date" in data ? formatter("time", data.date) : null;
 
-  if (size === "mini") {
+  if (data.size === "mini") {
     return (
       <div className={miniWidgetStyles.wrapper}>
         {"parkingName" in data && data.parkingName && data.date ? (
@@ -75,9 +63,7 @@ export const ParkingWidget: FC<IParkingWidgetProps> = ({ size, data }) => {
       onMouseEnter={() => setHover(!isHover)}
       onMouseLeave={() => setHover(!isHover)}
     >
-      <div className={longWidgetStyles.title}>
-        {(data as unknown as ILongParkingWidgetProps["data"]).parkingName}
-      </div>
+      <div className={longWidgetStyles.title}>{data.parkingName}</div>
       <div onClick={data.detailsClick}>
         {isHover ? "Подробнее" : `${data.price}₽`}
       </div>

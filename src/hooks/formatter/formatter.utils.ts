@@ -11,8 +11,8 @@ export const formatDate = (date: string | number | Date) => {
     date.getFullYear(),
   ];
 
-  return `${day > 10 ? day : "0" + day}.${
-    month > 10 ? month : "0" + month
+  return `${day >= 10 ? day : "0" + day}.${
+    month >= 10 ? month : "0" + month
   }.${year}`;
 };
 

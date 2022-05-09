@@ -5,7 +5,7 @@ export type FormatType = "date" | "time";
 const invalidMessage = "Неправильный формат";
 
 export const useFormatter = () => {
-  return (type: FormatType, unformattedValue: string): string => {
+  return (type: FormatType, unformattedValue: any): string => {
     switch (type) {
       case "date":
         return utils.formatDate(unformattedValue) ?? invalidMessage;

@@ -10,4 +10,5 @@
     --si-invalid-color: #FF0000;
     --si-navbar-bg: var(--si-text);
     --si-navbar-text: var(--si-text);
+    --si-widget-bg: var(--si-text-dark);
 }

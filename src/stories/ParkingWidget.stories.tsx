@@ -1,5 +1,5 @@
 import React from "react";
-import { ParkingWidget } from "../components/ParkingWidget/ParkingWidget";
+import { ParkingWidget } from "../components";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
@@ -14,30 +14,24 @@ const Template: ComponentStory<typeof ParkingWidget> = (args: any) => (
 export const MiniUncompleted = Template.bind({});
 MiniUncompleted.args = {
   size: "mini",
-  data: {
-    price: 200,
-    detailsClick: () => {},
-  },
+  price: 200,
+  detailsClick: () => {},
 };
 
 export const MiniCompleted = Template.bind({});
 MiniCompleted.args = {
   size: "mini",
-  data: {
-    parkingName: "Гринвич",
-    date: new Date(),
-    price: 300,
-    detailsClick: () => {},
-  },
+  parkingName: "Гринвич",
+  date: new Date(),
+  price: 300,
+  detailsClick: () => {},
 };
 
 export const Long = Template.bind({});
 Long.args = {
   size: "long",
-  data: {
-    parkingName: "Гринвич",
-    date: new Date(),
-    price: 400,
-    detailsClick: () => {},
-  },
+  parkingName: "Гринвич",
+  date: new Date(),
+  price: 400,
+  detailsClick: () => {},
 };

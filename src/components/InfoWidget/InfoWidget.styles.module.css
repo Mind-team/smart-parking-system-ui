@@ -4,14 +4,14 @@
     align-items: center;
     width: 434px;
     height: 136px;
-    /*background-color: ${(props) => props.theme.widgetBackground};*/
+    background-color: var(--si-widget-bg);
     border-radius: 29px;
     box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.08);
 }
 
 .miniControlLeftSide {
     font-size: 21px;
-    /*color: ${(props) => props.theme.plainText};*/
+    color: var(--si-text-dark);
     font-weight: 400;
 }
 
