@@ -14,17 +14,23 @@ const Template: ComponentStory<typeof ParkingWidget> = (args: any) => (
 export const MiniUncompleted = Template.bind({});
 MiniUncompleted.args = {
   size: "mini",
+  id: "1",
   price: 200,
-  detailsClick: () => {},
+  onClick: (id: string | number) => {
+    console.log(id);
+  },
 };
 
 export const MiniCompleted = Template.bind({});
 MiniCompleted.args = {
   size: "mini",
+  id: "2",
   parkingName: "Гринвич",
   date: new Date(),
   price: 300,
-  detailsClick: () => {},
+  onClick: (id: string | number) => {
+    console.log(id);
+  },
 };
 
 export const Long = Template.bind({});
@@ -33,5 +39,8 @@ Long.args = {
   parkingName: "Гринвич",
   date: new Date(),
   price: 400,
-  detailsClick: () => {},
+  id: "3",
+  onClick: (id: string | number) => {
+    console.log(id);
+  },
 };
