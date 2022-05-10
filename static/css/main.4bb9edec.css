@@ -166,14 +166,14 @@
     align-items: center;
     width: 434px;
     height: 136px;
-    /*background-color: ${(props) => props.theme.widgetBackground};*/
+    background-color: var(--si-widget-bg);
     border-radius: 29px;
     box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.08);
 }
 
 .InfoWidget_styles_miniControlLeftSide__7ppfV {
     font-size: 21px;
-    /*color: ${(props) => props.theme.plainText};*/
+    color: var(--si-text-dark);
     font-weight: 400;
 }
 
@@ -288,4 +288,4 @@
 }
 
 
-/*# sourceMappingURL=main.2c217aa9.css.map*/
+/*# sourceMappingURL=main.4bb9edec.css.map*/
