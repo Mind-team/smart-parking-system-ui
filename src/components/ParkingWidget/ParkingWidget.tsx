@@ -2,10 +2,10 @@ import React, { FC, useState } from "react";
 import miniWidgetStyles from "./ParkingWidgetMini.styles.module.css";
 import longWidgetStyles from "./ParkingWidgetLong.styles.module.css";
 import { useFormatter } from "../../hooks";
+import { IClickabelWithId } from "../../utils";
 
-interface IBaseParkingWidgetProps {
+interface IBaseParkingWidgetProps extends IClickabelWithId {
   price: string | number;
-  detailsClick: () => void;
 }
 
 interface ILongParkingWidgetProps extends IBaseParkingWidgetProps {
@@ -50,7 +50,10 @@ export const ParkingWidget: FC<IParkingWidgetProps> = (data) => {
           </div>
         )}
         <div className={miniWidgetStyles.sum}>{`${data.price}₽`}</div>
-        <div className={miniWidgetStyles.details} onClick={data.detailsClick}>
+        <div
+          className={miniWidgetStyles.details}
+          onClick={() => data.onClick(data.id)}
+        >
           Подробнее
         </div>
       </div>
@@ -64,7 +67,7 @@ export const ParkingWidget: FC<IParkingWidgetProps> = (data) => {
       onMouseLeave={() => setHover(!isHover)}
     >
       <div className={longWidgetStyles.title}>{data.parkingName}</div>
-      <div onClick={data.detailsClick}>
+      <div onClick={() => data.onClick(data.id)}>
         {isHover ? "Подробнее" : `${data.price}₽`}
       </div>
       <div className={longWidgetStyles.date}>{formattedDate}</div>

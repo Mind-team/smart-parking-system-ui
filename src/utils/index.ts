@@ -1,1 +1,3 @@
-export * from "./interfaces/Sizeable.interface";
+export * from "./interfaces/sizeable.interface";
+export * from "./interfaces/clickabel.interface";
+export * from "./interfaces/clickabelWithId.interface";
