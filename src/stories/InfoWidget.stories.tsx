@@ -14,17 +14,13 @@ const Template: ComponentStory<typeof InfoWidget> = (args: any) => (
 export const Mini = Template.bind({});
 Mini.args = {
   size: "mini",
-  data: {
-    leftSideText: "Ваша карта:",
-    rightSideText: "8480",
-  },
+  leftSideText: "Ваша карта:",
+  rightSideText: "8480",
 };
 
 export const Round = Template.bind({});
 Round.args = {
   size: "round",
-  data: {
-    text: "Hello",
-    gradientBackground: GradientBackground.RedNBlue,
-  },
+  text: "Hello",
+  gradientBackground: GradientBackground.RedNBlue,
 };
