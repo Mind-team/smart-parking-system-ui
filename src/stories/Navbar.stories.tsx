@@ -15,10 +15,10 @@ export const Default = Template.bind({});
 Default.args = {
   children: (
     <>
-      <NavbarElement title={"Главная"} />
-      <NavbarElement title={"История"} />
-      <NavbarElement title={"Парковки"} />
-      <NavbarElement title={"Профиль"} />
+      <NavbarElement title={"Главная"} onClick={() => console.log("1")} />
+      <NavbarElement title={"История"} onClick={() => console.log("2")} />
+      <NavbarElement title={"Парковки"} onClick={() => console.log("3")} />
+      <NavbarElement title={"Профиль"} onClick={() => console.log("4")} />
     </>
   ),
 };

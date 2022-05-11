@@ -1,13 +1,14 @@
 import React, { FC } from "react";
 import classes from "./Navbar.styles.module.css";
+import { IClickable } from "../../utils";
 
-export interface INavbarElementProps {
+export interface INavbarElementProps extends IClickable {
   title: string;
 }
 
-export const NavbarElement: FC<INavbarElementProps> = ({ title }) => {
+export const NavbarElement: FC<INavbarElementProps> = ({ title, onClick }) => {
   return (
-    <div className={`${classes.elementWrapper}`}>
+    <div className={`${classes.elementWrapper}`} onClick={onClick}>
       <span className={`${classes.elementTitle}`}>{title}</span>
     </div>
   );
