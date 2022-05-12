@@ -11,4 +11,5 @@
     --si-navbar-bg: var(--si-text);
     --si-navbar-text: var(--si-text);
     --si-widget-bg: var(--si-text-dark);
+    --si-loader-color: var(--si-accent);
 }
