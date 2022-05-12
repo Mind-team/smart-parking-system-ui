@@ -329,5 +329,32 @@
     }
 }
 
+.ErrorBanner_styles_wrapper__FVvHq {
+    background-color: var(--si-error-banner-bg);
+    border-radius: 20px;
+    border: 4px solid var(--si-error-banner-border);
+    color: var(--si-text);
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/*# sourceMappingURL=main.5dc45a9d.css.map*/
+.ErrorBanner_styles_s__kqwZ\+ {
+    height: 80px;
+    width: 520px;
+}
+
+.ErrorBanner_styles_m__EYt2B {
+    height: 90px;
+    width: 620px;
+}
+
+.ErrorBanner_styles_l__6pELg {
+    height: 110px;
+    width: 720px;
+}
+
+
+/*# sourceMappingURL=main.ab806d54.css.map*/
