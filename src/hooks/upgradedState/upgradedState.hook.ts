@@ -1,6 +1,8 @@
 import { SetStateAction } from "react";
 import { useState } from "react";
 
+export const useErrorCode = () => ["b8bc6a51-bb62-4036-be5b-426d2de1270b"];
+
 export interface IUseUpgradedStateReturn<T> {
   value: T;
   setValue: (fn: SetStateAction<T>, changeLoading?: boolean) => void;
@@ -8,7 +10,7 @@ export interface IUseUpgradedStateReturn<T> {
   setLoading: (value: boolean) => void;
   toggleLoading: () => void;
   isError: boolean;
-  serError: (value: boolean) => void;
+  setError: (value: boolean, changeLoading?: boolean) => void;
   toggleError: () => void;
 }
 
@@ -22,6 +24,16 @@ export const useUpgradedState = <T>(
   const [_isValueError, _setValueError] = useState(false);
 
   const setValue = (fn: SetStateAction<T>, changeLoading = true) => {
+    if (
+      Array.isArray(fn) &&
+      fn.length === 1 &&
+      fn[0] === "b8bc6a51-bb62-4036-be5b-426d2de1270b"
+    ) {
+      _setValueError(true);
+      if (changeLoading) {
+        _setValueLoading(false);
+      }
+    }
     // @ts-ignore
     _setValue(fn);
     if (changeLoading) {
@@ -38,6 +50,13 @@ export const useUpgradedState = <T>(
     }
   };
 
+  const setError = (value: boolean, changeLoading = true) => {
+    _setValueError(value);
+    if (changeLoading) {
+      _setValueLoading(false);
+    }
+  };
+
   return {
     // @ts-ignore
     value: _value,
@@ -46,7 +65,7 @@ export const useUpgradedState = <T>(
     setLoading: _setValueLoading,
     toggleLoading: toggle.bind(null, "loading"),
     isError: _isValueError,
-    serError: _setValueError,
+    setError,
     toggleError: toggle.bind(null, "error"),
   };
 };
