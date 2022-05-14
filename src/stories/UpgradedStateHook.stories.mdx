@@ -1,0 +1,48 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Hooks/useUpgradedState" />
+
+# useUpgradedState hook
+Хук создан для уменьшения количества кода и автоматизации некоторых рутинных процессов.
+Предположим, что вы загружаете данные с сервера. Пока идет загрузка вы отображаете лоадер, если во
+время загрузки происходит ошибка - показываете ошибку. Как такое можно сделать?
+``` tsx
+const [dataFromApi, setDataFromApi] = useState<IData>();
+const [isDataFromApiLoading, setDataFromApiLoading] = useState(true);
+const [isDataFromApiError, setDataFromApiError] = useState(false);
+
+useEffect(() => {
+  fetchData()
+    .then((response) => {
+      setDataFromApi(response);
+      setDataFromApiLoading(false);
+    })
+    .catch(() => {
+      setDataFromApiLoading(false);
+      setDataFromApiError(true);
+    })
+}, []);
+```
+
+Давай воспользуемся нашим хуком
+``` tsx
+const {
+  value: dataFromApi,
+  setValue: setDataFromApi,
+} = useUpgradedState<IData>();
+
+useEffect(() => {
+  fetchData()
+    .then((response) => {
+      setDataFromApi(response);
+    })
+    .catch(() => {
+      setDataFromApi(useErrorCode());
+    })
+}, []);
+```
+
+## Usage:
+``` tsx
+const { value: userData
+```
