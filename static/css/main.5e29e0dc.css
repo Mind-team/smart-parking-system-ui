@@ -288,9 +288,9 @@
 }
 
 .Loader_styles_spinner__wc8ko {
-    margin: 100px auto 0;
+    /*margin: 100px auto 0;*/
     width: 70px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .Loader_styles_spinner__wc8ko > div {
@@ -356,5 +356,11 @@
     width: 720px;
 }
 
+.LoaderWrapper_styles_wrapper__So8lB {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/*# sourceMappingURL=main.ab806d54.css.map*/
+
+/*# sourceMappingURL=main.5e29e0dc.css.map*/
