@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export interface IUseUpgradedStateReturn<T> {
   value: T;
-  setValue: (fn: SetStateAction<T | undefined>, changeLoading: boolean) => void;
+  setValue: (fn: SetStateAction<T>, changeLoading?: boolean) => void;
   isLoading: boolean;
   setLoading: (value: boolean) => void;
   toggleLoading: () => void;
@@ -13,7 +13,7 @@ export interface IUseUpgradedStateReturn<T> {
 }
 
 export const useUpgradedState = <T>(
-  initialValue?: T,
+  initialValue?: T | (() => T),
 ): IUseUpgradedStateReturn<T> => {
   const [_value, _setValue] = initialValue
     ? useState<T>(initialValue)
@@ -21,10 +21,7 @@ export const useUpgradedState = <T>(
   const [_isValueLoading, _setValueLoading] = useState(true);
   const [_isValueError, _setValueError] = useState(false);
 
-  const setValue = (
-    fn: SetStateAction<T | undefined>,
-    changeLoading = true,
-  ) => {
+  const setValue = (fn: SetStateAction<T>, changeLoading = true) => {
     // @ts-ignore
     _setValue(fn);
     if (changeLoading) {
