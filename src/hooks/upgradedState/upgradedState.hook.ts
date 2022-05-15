@@ -1,11 +1,16 @@
 import { SetStateAction } from "react";
 import { useState } from "react";
 
-export const useErrorCode = () => ["b8bc6a51-bb62-4036-be5b-426d2de1270b"];
+export const useErrorCode = (): ["b8bc6a51-bb62-4036-be5b-426d2de1270b"] => [
+  "b8bc6a51-bb62-4036-be5b-426d2de1270b",
+];
 
 export interface IUseUpgradedStateReturn<T> {
   value: T;
-  setValue: (fn: SetStateAction<T>, changeLoading?: boolean) => void;
+  setValue: (
+    fn: SetStateAction<T> | ["b8bc6a51-bb62-4036-be5b-426d2de1270b"],
+    changeLoading?: boolean,
+  ) => void;
   isLoading: boolean;
   setLoading: (value: boolean) => void;
   toggleLoading: () => void;
@@ -60,6 +65,7 @@ export const useUpgradedState = <T>(
   return {
     // @ts-ignore
     value: _value,
+    // @ts-ignore
     setValue,
     isLoading: _isValueLoading,
     setLoading: _setValueLoading,
