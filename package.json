@@ -1,6 +1,6 @@
 {
   "name": "sps-ui",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "homepage": "https://mind-team.github.io/smart-parking-system-ui",
   "scripts": {
     "start": "react-scripts start",
