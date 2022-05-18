@@ -11,6 +11,26 @@ const runCache = <ReturnCallbackValue>(
   return _cache[key];
 };
 
+const runAsyncCache = <ReturnCallbackValue>(
+  key: string,
+  cb: () => Promise<ReturnCallbackValue>,
+): Promise<ReturnCallbackValue> => {
+  if (_cache[key]) {
+    return Promise.resolve(_cache[key]);
+  }
+  return cb()
+    .then((result) => {
+      _cache[key] = result;
+      return result;
+    })
+    .catch((err) => {
+      console.error(
+        "Произошла ошибка при записи результата асинхронного события в кэш",
+      );
+      throw err;
+    });
+};
+
 const clearCache = (key?: string | ""): void => {
   if (key && key !== "") {
     _cache[key] = null;
@@ -20,5 +40,5 @@ const clearCache = (key?: string | ""): void => {
 };
 
 export const useCache = () => {
-  return { runCache, clearCache };
+  return { runCache, runAsyncCache, clearCache };
 };
