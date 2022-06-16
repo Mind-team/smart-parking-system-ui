@@ -25,7 +25,7 @@ export const formatTime = (date: string | number | Date) => {
   }
   const [hours, minutes] = [date.getHours(), date.getMinutes()];
 
-  return `${hours > 10 ? hours : "0" + hours}:${
-    minutes > 10 ? minutes : "0" + minutes
+  return `${hours >= 10 ? hours : "0" + hours}:${
+    minutes >= 10 ? minutes : "0" + minutes
   }`;
 };
